@@ -10,12 +10,13 @@
 
 \title{\textbf{\huge Stochastik 1
 \\\large Blatt 1}}
-\author{Franziska Kissel (643 35 57), Daniel Speck (632 13 17)}
-\date{13.04.2014}
+\author{Jackie Huynh (), Daniel Speck (632 13 17)}
+\date{13.04.2015}
 
 \setlength{\topmargin}{-1.0cm}
 \setlength{\textheight}{650pt}
 
+\newcommand{\bs}{\;\backslash\;}
 
 \begin{document}
 
@@ -24,67 +25,89 @@
 	\maketitle
 
 
-
-
 	% Aufgabe 1
 	\section*{Aufgabe 1}
+	
+		(a) \quad
+		$(A \bs B) \cup (A \bs C) = A \bs (B \cap C)$
+		\\
+		$\Leftrightarrow (A \cap B^c) \cup (A \cap C^c) = A \bs (B \cap C)$
+		\\
+		$\Leftrightarrow A \cap (B^c \cup C^c) = A \bs (B \cap C)$
+		\\
+		$\Leftrightarrow A \cap (B^c \cup C^c) = A \cap (B^c \cup C^c)$
+		\\
+		\\
+		Da per Äquivalenzumformungen die Gleichheit beider Seiten gezeigt werden können, ist die Richtigkeit der Gleichung bestätigt.
+		\\
+		\\
+		\\
+		(b) \quad
+		$(A \cup B) \bs C = A \cup (B \bs C)$
+		\\
+		\\
+		Diese Gleichung ist inkorrekt, Beweis:
+		\\
+		Sei $M_1 = \{\; x \;|\; x \in A \lor x \in B, x \not\in C \;\}$ die linke Seite der Gleichung, so ist ein Element genau dann in der resultierenden Menge $M_1$ enthalten, wenn es in $A$ oder $B$, nicht aber in $C$ enthalten ist.
+		\\
+		Sei $M_2 = \{\; x \;|\; x \in A \lor (x \in B \land x \not\in C) \;\}$ die rechte Seite der Gleichung, so ist ein Element genau dann in der resultierenden Menge $M_2$ enthalten, wenn es in $A$ enthalten ist oder aber in $B$ und zugleich nicht in $C$.
+		\\
+		Das bedeutet, in der Menge $M_1$ kann kein Element aus $A \cap C$ enthalten sein, in der Menge $M_2$ sind aber alle Elemente aus $A \cap C$ enthalten.
+		\\
+		Damit gilt $M_1 \neq M_2$, sodass die Gleichung also inkorrekt ist.
+		
+		\begin{flushright}
+			\text{$\Box$}
+		\end{flushright}
 
+
+	% Aufgabe 2
+	\section*{Aufgabe 2}
 
 		\begin{math}
-			\text{a.)}
+			\text{(a)} \quad
+			L_1 = A \cap B \cap C
 			\\
 			\\
-			A^c \cap B^c \cap C^c = ( A \cup B \cup C )^c
+			\text{(b)} \quad
+			L_2 =
+			(A \cap (B^c \cup C^c)) \cup
+			(B \cap (A^c \cup C^c)) \cup
+			(C \cap (A^c \cup B^c))
 			\\
 			\\
-			\text{b.)}
+			\text{(c)} \quad
+			L_3 =
+			(A \cap B) \cup (A \cap C) \cup (B \cap C)
 			\\
 			\\
-			( A \cap B ) \cup ( A \cap C ) \cup ( B \cap C )
+			\text{(d)} \quad
+			L_4 = L_1 \cup L_2
 		\end{math}
 
 		\begin{flushright}
 						\text{$\Box$}
 		\end{flushright}
 
+	\newpage
 
-	\section*{Aufgabe 2}
+	% Aufgabe 3
+	\section*{Aufgabe 3}
+		
+		(a) \quad
+		$\Omega = \{\; (\omega_1, \omega_2, \omega_3) \;|\; \omega_1, \omega_2, \omega_3 \in \{1, 2\} \;\}$
+		\\
+		\\
+		$\omega_i = 1 \quad \mathrel{\hat{=}} \quad$ Münze zeigt Zahl 
+		\\
+		$\omega_i = 2 \quad \mathrel{\hat{=}} \quad$ Münze zeigt Kopf
 
-		\begin{text}
-			I. Zeige $P(A \cap B) \le \frac{1}{3}$:
-			\\
-			\\
-			Die Schnittmenge zweier Mengen $A, B$ kann höchstens so mächtig sein, wie die weniger mächtige der beiden Mengen, da für die Schnittmenge formal gilt:
-			\\
-			\\
-			$A \cap B  = \{ x : x \in A \wedge x \in B\}$
-			\\
-			\\
-			Da $P(B) = \frac{1}{3} < \frac{3}{4} = P(A)$ gegeben ist, muss der Menge $B$ offensichtlich mindestens ein Element fehlen, welches für die höhere Wahrscheinlichkeit der Menge $A$ sorgt (ansonsten wäre $P(B) \ge P(A)$, wenn $B$ alle Elemente aus $A$ enthalten würde).
-			\\
-			Damit wäre gezeigt, das für $P(A \cap B)$ maximal $P(A \cap B) = P(B)$ gelten kann, da $B$ nicht alle Elemente aus A enthält und somit der Schnitt maximal alle aus B enthalten kann.
-			\\
-			Hiermit haben wir dann die obere Grenze $P(A \cap B) \le \frac{1}{3}$ gefunden.
-			\\
-			\\
-			II. Zeige $\frac{1}{12} \le P(A \cap B)$:
-			\\
-			\\
-			$P(A) + P(B) = \frac{13}{12} \quad \Rightarrow \quad P(A \cap B) \neq \emptyset$, da die Summe aller Wahrscheinlichkeiten des Wahrscheinlichkeitenraumes 1 ergeben muss (man hat also offensichtlich bereits bei der Summierung aller Wahrscheinlichkeiten der Ereignisse A und B mindestens 1 Element doppelt gezählt bei $P(A) + P(B)$, woraus sich ergibt, dass mindestens 1 Element in beiden Mengen enthalten sein muss. Wäre das nicht der Fall, so müsste ansonsten $P(A) + P(B) \le 1$ gelten).
-			\\
-			\\
-			Schaut man sich nun die Summe von $P(A) + P(B) = \frac{9}{12} + \frac{4}{12} = \frac{13}{12}$ an, fällt außerdem direkt auf, dass die Summe genau $\frac{1}{12}$ über $1$ liegt. Daraus folgt, dass eine Teilmenge $Y$ mit $A \cap B = Y$ existiert, für die gilt, dass $P(Y) \ge \frac{1}{12}$.
-			\\
-			Damit wissen wir, dass die Schnittmenge von $A, B$ nicht leer ist und dies impliziert auch, dass das Ergebnis der Schnittmenge, die Menge $Y$, mindestens ein Element haben muss.
-			\\
-			Da für die Wahrscheinlichkeit von $Y$ gilt, dass sie mindestens $\frac{1}{12}$ ist, haben wir unsere Untere Grenze für die Wahrscheinlichkeit der Schnittmenge gefunden. Es gilt also $\frac{1}{12} \le P(A \cap B)$
-			\\
-			\\
-			Aus I und II folgt dann $\frac{1}{12} \le P(A \cap B) \le \frac{1}{3}$
-			\begin{flushright}
-						q.e.d.
-			\end{flushright}
-		\end{text}
+
+
+
+
+
+
 
 
 
