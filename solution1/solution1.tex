@@ -10,7 +10,7 @@
 
 \title{\textbf{\huge Stochastik 1
 \\\large Blatt 1}}
-\author{Jackie Huynh (), Daniel Speck (632 13 17)}
+\author{Jackie Huynh (\qquad\qquad), Daniel Speck (632 13 17)}
 \date{13.04.2015}
 
 \setlength{\topmargin}{-1.0cm}
@@ -95,70 +95,47 @@
 	\section*{Aufgabe 3}
 		
 		(a) \quad
-		$\Omega = \{\; (\omega_1, \omega_2, \omega_3) \;|\; \omega_1, \omega_2, \omega_3 \in \{1, 2\} \;\}$
+		$\Omega = \{\; (\omega_1, \omega_2, \omega_3) \;|\; \omega_1, \omega_2, \omega_3 \in \{1, 2\} \;\}$ \qquad P $\mathrel{\hat{=}}$ Laplacemaß
 		\\
 		\\
 		$\omega_i = 1 \quad \mathrel{\hat{=}} \quad$ Münze zeigt Zahl 
 		\\
 		$\omega_i = 2 \quad \mathrel{\hat{=}} \quad$ Münze zeigt Kopf
+		\\
+		\\
+		\\
+		(b) \quad Bestimme Teilmengen $A$ und $B$:
+		\\
+		\\
+		$A = \{\; (\omega_1, \omega_2, \omega_3) \in \Omega \;|\; \omega_1 = \omega_2 \;\}$
+		\\
+		$B = \{\; (\omega_1, \omega_2, \omega_3) \in \Omega \;|\; \omega_2 = \omega_3 \;\}$
+		\\
+		\\
+		\\
+		(c) \quad Ereignisse $A \cap B$ und $A \bs B$ angeben:
+		\\
+		\\
+		$A \cap B = \{\; (\omega_1, \omega_2, \omega_3) \in \Omega \;|\; \omega_1 = \omega_2 = \omega_3 \;\}$
+		\\
+		Die Menge $A \cap B$ enthält alle Elemente, in denen $\omega_1$ mit $\omega_2$ übereinstimmt und dann wiederum $\omega_2$ mit $\omega_3$ übereinstimmt. Das ist genau dann der Fall, wenn alle drei Würfe identisch sind, also alle drei Würfe Zahl oder alle drei Würfe Kopf zeigen.
+		\\
+		\\
+		$A \bs B = \{\; (\omega_1, \omega_2, \omega_3) \in \Omega \;|\; \omega_1 = \omega_2 \land \omega_2 \neq \omega_3 \;\}$
+		\\
+		Die Menge $A \bs B$ enthält alle Elemente, in denen $\omega_1$ identisch mit $\omega_2$, $\omega_2$ aber ungleich mit $\omega_3$ ist. Jenes ist genau dann der Fall, wenn die ersten beiden Würfe identisch waren, der dritte Wurf aber von den ersten beiden abweicht.
+		\\
+		\\
+		(d) \quad Wahrscheinlichkeiten von $A$ und $A \cap B$:
+		\\
+		\\
+		$P(A) = \frac{|A|}{|\Omega|} = \frac{2*2}{2*2*2} = \frac{4}{8} = \frac{1}{2}$
+		\\
+		\\
+		$P(A \cap B) = \frac{|A \cap B|}{|\Omega|} = \frac{2}{8} = \frac{1}{4}$
+		
+		
 
-
-
-
-
-
-
-
-
-
-	\section*{Aufgabe 3}
-
-		\begin{text}
-			a.) 
-			\\
-			\\
-			Urnenmodell: Ziehen mit Reihenfolge und ohne Zurücklegen
-			\\
-			\\
-			$\Omega_{R,-Z} := \{ \omega \in \{ 1, ..., n \}^k \; | \; \forall i \neq j \in \{ 1, ..., k \} : \omega_i \neq \omega_j \}$
-			\\
-			\\
-			b.)
-			\\
-			\\
-			Herr Mayer $:= 1$, \; Frau Müller $:= 2$
-			\\
-			\\
-			$A = \{ \omega \in \Omega_{R,-Z} \; | \; \exists i \in \{ 1, ... , 11 \} : \\(w_i = 1, w_{i+1} = 2) \vee \\(w_i = 2, w_{i+1} = 1) \vee \\(w_1 = 1, w_{12} = 2) \vee \\(w_1 = 2, w_{12} = 1) \}$
-			\\
-			\\
-			Stellt man sich den runden Tisch bildlich vor, so sitzen Herr Mayer und Frau Müller genau dann hintereinander (also zusammen), wenn $w_i = 1, w_{i+1} = 2$ oder $w_i = 2, w_{i+1} = 1$ gilt. Ebenso sitzen sie natürlich zusammen, wenn $w_1 = 1, w_{12} = 2)$ oder $(w_1 = 2, w_{12} = 1)$ gilt, denn dann sitzt einer von beiden auf Platz 1, der andere auf Platz 12, was bei einem runden Tisch mit 12 Plätzen ebenso bedeutet, dass sie nebeneinander sitzen.
-			\\
-			\\
-			c.)
-			\\
-			\\
-			$|A| = ( \sum_{i=1}^{11}$ 
-			$( \, |\{ \omega : \omega_i = 1, \omega_{i+1} = 2\}| $
-			$+$
-			$|\{ \omega : \omega_i = 2, \omega_{i+1} = 1\}| \,) )$
-			$+$
-			$|\{ \omega : \omega_1 = 1, \omega_{12} = 2\}|$
-			$+$
-			$|\{ \omega : \omega_1 = 2, \omega_{12} = 1\}| \;$
-			\\
-			\\
-			$ = 11 * ( 10! + 10! ) + 10! + 10!$
-			\\
-			\\
-			$ = 11 * ( 2 * 10! ) + 2 * 10!$
-			\\
-			\\
-			$ = 2 * 11! + 2 * 10! = 2 * ( 11! + 10! )$
-			\\
-			\\
-			$ \Rightarrow P(A) = \frac{2 * (11! + 10!)}{12!} = \frac{2}{11}$
-		\end{text}
 
 \end{document}
 
