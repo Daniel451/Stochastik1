@@ -1,0 +1,69 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{polynom} % Polynomdivision
+
+
+
+\title{\textbf{\huge Stochastik 1
+\\\large Blatt 3}}
+\author{Jackie Huynh (\qquad\qquad), Daniel Speck (632 13 17)}
+\date{17.04.2015}
+
+\setlength{\topmargin}{-1.0cm}
+\setlength{\textheight}{650pt}
+
+\newcommand{\bs}{\;\backslash\;}
+
+\begin{document}
+
+
+	% Titel, Autor & Abgabedatum
+	\maketitle
+
+
+	% Aufgabe 1
+	\section*{Aufgabe 1}
+	
+		Widerlege $P(A|B) = 1 - P(A | B^c)$:
+		\\
+		\\
+		Wähle
+		$\displaystyle A = \{a, b, c\}, B = \{c, d, e\}, \Omega = \{a,b,c,d,e\}$
+		\\
+		\\
+		$\displaystyle \Rightarrow P(A \cap B) = P(\{c\}) = \frac{1}{5}$
+		$\displaystyle ,\; P(A \cap B^c) = P(\{a,b\}) = \frac{2}{5}$
+		\\
+		\\
+		Außerdem ist $\displaystyle P(B) = \frac{|B|}{|\Omega|} =\frac{3}{5}, \; P(B^c) = \frac{|\{a,b\}|}{|\Omega|} = \frac{2}{5}$
+		\\
+		\\
+		Daraus folgt dann:
+		\\
+		\\
+		$\displaystyle P(A|B) = \frac{P(A \cap B)}{P(B)} = \frac{\frac{1}{5}}{\frac{3}{5}} = \frac{1}{3}$
+		\\
+		\\
+		\\
+		$1 - P(A|B^c) = 1 - \displaystyle\frac{P(A \cap B^c)}{P(B^c)} = 1 - \frac{\frac{2}{5}}{\frac{2}{5}} = 1 - 1 = 0$
+		\\
+		\\
+		\\
+		Damit ergibt sich: $P(A|B) = \displaystyle\frac{1}{3} \neq 1 = P(A|B^c)$
+		\begin{flushright}
+			\text{$\Box$}
+		\end{flushright}
+
+		
+		
+
+
+\end{document}
+
+
+
+

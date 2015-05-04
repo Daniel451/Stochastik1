@@ -1,0 +1,144 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{polynom} % Polynomdivision
+
+
+
+\title{\textbf{\huge Stochastik 1
+\\\large Blatt 1}}
+\author{Jackie Huynh (\qquad\qquad), Daniel Speck (632 13 17)}
+\date{13.04.2015}
+
+\setlength{\topmargin}{-1.0cm}
+\setlength{\textheight}{650pt}
+
+\newcommand{\bs}{\;\backslash\;}
+
+\begin{document}
+
+
+	% Titel, Autor & Abgabedatum
+	\maketitle
+
+
+	% Aufgabe 1
+	\section*{Aufgabe 1}
+	
+		(a) \quad
+		$(A \bs B) \cup (A \bs C) = A \bs (B \cap C)$
+		\\
+		$\Leftrightarrow (A \cap B^c) \cup (A \cap C^c) = A \bs (B \cap C)$
+		\\
+		$\Leftrightarrow A \cap (B^c \cup C^c) = A \bs (B \cap C)$
+		\\
+		$\Leftrightarrow A \cap (B^c \cup C^c) = A \cap (B^c \cup C^c)$
+		\\
+		\\
+		Da per Äquivalenzumformungen die Gleichheit beider Seiten gezeigt werden können, ist die Richtigkeit der Gleichung bestätigt.
+		\\
+		\\
+		\\
+		(b) \quad
+		$(A \cup B) \bs C = A \cup (B \bs C)$
+		\\
+		\\
+		Diese Gleichung ist inkorrekt, Beweis:
+		\\
+		Sei $M_1 = \{\; x \;|\; x \in A \lor x \in B, x \not\in C \;\}$ die linke Seite der Gleichung, so ist ein Element genau dann in der resultierenden Menge $M_1$ enthalten, wenn es in $A$ oder $B$, nicht aber in $C$ enthalten ist.
+		\\
+		Sei $M_2 = \{\; x \;|\; x \in A \lor (x \in B \land x \not\in C) \;\}$ die rechte Seite der Gleichung, so ist ein Element genau dann in der resultierenden Menge $M_2$ enthalten, wenn es in $A$ enthalten ist oder aber in $B$ und zugleich nicht in $C$.
+		\\
+		Das bedeutet, in der Menge $M_1$ kann kein Element aus $A \cap C$ enthalten sein, in der Menge $M_2$ sind aber alle Elemente aus $A \cap C$ enthalten.
+		\\
+		Damit gilt $M_1 \neq M_2$, sodass die Gleichung also inkorrekt ist.
+		
+		\begin{flushright}
+			\text{$\Box$}
+		\end{flushright}
+
+
+	% Aufgabe 2
+	\section*{Aufgabe 2}
+
+		\begin{math}
+			\text{(a)} \quad
+			L_1 = A \cap B \cap C
+			\\
+			\\
+			\text{(b)} \quad
+			L_2 =
+			(A \cap (B^c \cup C^c)) \cup
+			(B \cap (A^c \cup C^c)) \cup
+			(C \cap (A^c \cup B^c))
+			\\
+			\\
+			\text{(c)} \quad
+			L_3 =
+			(A \cap B) \cup (A \cap C) \cup (B \cap C)
+			\\
+			\\
+			\text{(d)} \quad
+			L_4 = L_1 \cup L_2
+		\end{math}
+
+		\begin{flushright}
+						\text{$\Box$}
+		\end{flushright}
+
+	\newpage
+
+	% Aufgabe 3
+	\section*{Aufgabe 3}
+		
+		(a) \quad
+		$\Omega = \{\; (\omega_1, \omega_2, \omega_3) \;|\; \omega_1, \omega_2, \omega_3 \in \{1, 2\} \;\}$ \qquad P $\mathrel{\hat{=}}$ Laplacemaß
+		\\
+		\\
+		$\omega_i = 1 \quad \mathrel{\hat{=}} \quad$ Münze zeigt Zahl 
+		\\
+		$\omega_i = 2 \quad \mathrel{\hat{=}} \quad$ Münze zeigt Kopf
+		\\
+		\\
+		\\
+		(b) \quad Bestimme Teilmengen $A$ und $B$:
+		\\
+		\\
+		$A = \{\; (\omega_1, \omega_2, \omega_3) \in \Omega \;|\; \omega_1 = \omega_2 \;\}$
+		\\
+		$B = \{\; (\omega_1, \omega_2, \omega_3) \in \Omega \;|\; \omega_2 = \omega_3 \;\}$
+		\\
+		\\
+		\\
+		(c) \quad Ereignisse $A \cap B$ und $A \bs B$ angeben:
+		\\
+		\\
+		$A \cap B = \{\; (\omega_1, \omega_2, \omega_3) \in \Omega \;|\; \omega_1 = \omega_2 = \omega_3 \;\}$
+		\\
+		Die Menge $A \cap B$ enthält alle Elemente, in denen $\omega_1$ mit $\omega_2$ übereinstimmt und dann wiederum $\omega_2$ mit $\omega_3$ übereinstimmt. Das ist genau dann der Fall, wenn alle drei Würfe identisch sind, also alle drei Würfe Zahl oder alle drei Würfe Kopf zeigen.
+		\\
+		\\
+		$A \bs B = \{\; (\omega_1, \omega_2, \omega_3) \in \Omega \;|\; \omega_1 = \omega_2 \land \omega_2 \neq \omega_3 \;\}$
+		\\
+		Die Menge $A \bs B$ enthält alle Elemente, in denen $\omega_1$ identisch mit $\omega_2$, $\omega_2$ aber ungleich mit $\omega_3$ ist. Jenes ist genau dann der Fall, wenn die ersten beiden Würfe identisch waren, der dritte Wurf aber von den ersten beiden abweicht.
+		\\
+		\\
+		(d) \quad Wahrscheinlichkeiten von $A$ und $A \cap B$:
+		\\
+		\\
+		$P(A) = \frac{|A|}{|\Omega|} = \frac{2*2}{2*2*2} = \frac{4}{8} = \frac{1}{2}$
+		\\
+		\\
+		$P(A \cap B) = \frac{|A \cap B|}{|\Omega|} = \frac{2}{8} = \frac{1}{4}$
+		
+		
+
+
+\end{document}
+
+
+
+
