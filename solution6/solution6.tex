@@ -31,9 +31,48 @@
 
 	\section*{Aufgabe 1}
 	
-		
+	\newpage
 		
 	\section*{Aufgabe 2}
+	
+		Die Aufgabe kann mit der hypergeometrischen Verteilung modelliert werden, allgemein gilt:
+		\begin{equation*}
+			P^x\{m\} = P(X=m)
+			= \frac{\binom{M}{m} * \binom{N - M}{n - m}}{\binom{N}{n}}
+		\end{equation*}
+		\\
+		Aus der Aufgabe ist zu entnehmen: $\; N = 200,\; n = 4,\; M = 200 * 0.05 = 10$
+		\\
+		\\
+		Für diese Aufgabe ist nun gesucht:
+		\begin{gather*}
+			P^x\{1 \le m \le 4 \}
+			= P^x\{m = 1\} + P^x\{m = 2\} + P^x\{m = 3\} + P^x\{m = 4\}
+			\\
+			=
+			\frac{\binom{10}{1} * \binom{200 - 10}{4 - 1}}{\binom{200}{4}}
+			+
+			\frac{\binom{10}{2} * \binom{200 - 10}{4 - 2}}{\binom{200}{4}}
+			+
+			\frac{\binom{10}{3} * \binom{200 - 10}{4 - 3}}{\binom{200}{4}}
+			+
+			\frac{\binom{10}{4} * \binom{200 - 10}{4 - 4}}{\binom{200}{4}}
+			\\
+			=
+			\frac{\binom{10}{1} * \binom{190}{3}}{\binom{200}{4}}
+			+
+			\frac{\binom{10}{2} * \binom{190}{2}}{\binom{200}{4}}
+			+
+			\frac{\binom{10}{3} * \binom{190}{1}}{\binom{200}{4}}
+			+
+			\frac{\binom{10}{4} * \binom{190}{0}}{\binom{200}{4}}	
+			\\
+			\approx
+			0.174 + 0.012 + 0.0004 + 0.000003
+			\approx
+			0.186
+		\end{gather*}
+		Damit ergibt sich eine Wahrscheinlichkeit von gerundet 19\%, dass eine Lieferung reklamiert wird.
 	
 	\newpage
 	
