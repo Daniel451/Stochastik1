@@ -1,0 +1,135 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{tabto}
+\usepackage{polynom} % Polynomdivision
+
+
+
+\title{\textbf{\huge Stochastik 1
+\\\large Blatt 6}}
+\author{Jackie Huynh (638 88 88), Daniel Speck (632 13 17)}
+\date{18.05.2015}
+
+\setlength{\topmargin}{-1.0cm}
+\setlength{\textheight}{650pt}
+
+\NumTabs{4}
+
+\newcommand{\bs}{\;\backslash\;}
+
+\begin{document}
+
+
+	% Titel, Autor & Abgabedatum
+	\maketitle
+
+
+
+	\section*{Aufgabe 1}
+	
+		
+		
+	\section*{Aufgabe 2}
+	
+	\newpage
+	
+	\section*{Aufgabe 3}
+	
+		(a) \quad Da die Personen unabhängig voneinander ausgewählt wurden und alle dieselbe Wahrscheinlichkeit haben, die Blutgruppe AB negativ zu haben, können wir als zugrundeliegende Verteilung folgendes annehmen:
+		\\
+		\\
+		$X$ sei die Verteilung und $X$ ist binomialverteilt mit $Bin_{(50, \; 0.01)}$
+		\\
+		\\
+		Gesucht ist nun $P(X \ge 1) = 1 - P(X=0) = 1 - \binom{50}{0} * 0.01^0 * (1-0.01)^{50-0}$
+		\\
+		\\
+		$= 1 - 1 * 1 * (0.99)^{50} \approx 1 - 0.61 = 0.39$
+		\\
+		\\
+		Die Wahrscheinlichkeit, dass eine Person dieser 50 die Blutgruppe AB negativ hat, beträgt also ca. 39\%.
+		\\
+		\\
+		Eine approximative Lösung ist mittels der Poissonverteilung möglich. 
+		\\
+		\\
+		Allgemein gilt für eine derartige Verteilung:
+		\begin{equation}
+		\label{poisson_allgemein}
+			P_{\lambda}(\{k\})
+			= e^{-\lambda} * \frac{\lambda^{k}}{k!}
+		\end{equation}
+		In dieser Aufgabe ist $\lambda$ mit $\lambda = n*p = 50 * 0.01 = 0.5$ gegeben.
+		\\
+		Damit lässt sich die Wahrscheinlichkeit wie folgt approximieren:
+		\begin{equation}
+			\label{poisson_komplement}
+			P_{\lambda}(\{k \ge 1\})
+			= \sum\limits_{i=1}^{k} e^{-\lambda} * \frac{\lambda^{i}}{i!}
+			= 1 - P_{\lambda}(\{k=0\})
+			= 1 - e^{-\lambda} * \frac{\lambda^{k}}{k!}
+		\end{equation}
+		\\
+		Denn die Gesamtwahrscheinlichkeit ergibt $1$ und $P_{\lambda}(\{k = 0\})$ ist das Komplement von $P_{\lambda}(\{k \ge 1\})$, sodass sich gerade $P_{\lambda}(\{k \ge 1\}) = 1 - P_{\lambda}(\{k = 0\})$ ergibt.
+		\\
+		\\
+		Daraus ergibt sich:
+		\begin{equation*}
+			P_{\lambda}(\{k \ge 1\})
+			= 1 - P_{\lambda}(\{k = 0\})
+			= 1 - e^{-\lambda}
+			* \underbrace{\frac{\lambda^{0}}{0!}}_{\substack{=1}} 
+			= 1 - e^{-\lambda}
+			= 1 - e^{-0.5}
+			\approx 0.39
+		\end{equation*}
+		\\
+		Damit ergibt sich aus der Poissonverteilung gerundet ebenfalls eine Wahrscheinlichkeit von 39\% (approximiert).
+		\\
+		\\
+		(b) \quad Da eine geeignete Approximation reicht, kann hier die Poissonverteilung benutzt werden, da $n \ge 50$ aufgrund der 50 Personen erfüllt ist und $p \le 0.05$ gilt, da die Wahrscheinlichkeit hier $p = 0.01$ ist.
+		\\
+		\\
+		Für mindestens eine Person gilt:
+		\begin{equation}
+			\label{3b_verteilung}
+			P_{\lambda}(\{k \ge 1\})
+			\overset{(\ref{poisson_komplement})}{=}
+			1 - e^{-\lambda} * \underbrace{\frac{\lambda^{0}}{0!}}_{\substack{=1}}
+			\overset{(\lambda = n*p)}{=}
+			1 - e^{-n*p} 
+		\end{equation}
+		Nun ist $n$ gesucht für $p = 0.01$ und einer Gesamtwahrscheinlichkeit von mindestens 50\%, dass das Ereignis zutrifft:
+		\begin{gather}
+			\nonumber
+			0.5 \overset{(\ref{3b_verteilung})}{\le} 1 - e^{-n*p}
+			\;\Leftrightarrow\; 0.5 + e^{-n*p} \le 1
+			\;\Leftrightarrow\; e^{-n*p} \le 0.5
+			\\
+			\nonumber
+			\Leftrightarrow\;   ln(e^{-n*p}) \le ln(0.5)
+			\;\Leftrightarrow\; -n*p \le ln(0.5)
+			\\
+			\label{3b_ergebnis}
+			\Leftrightarrow\;   n \ge -\frac{ln(0.5)}{p}
+			= -\frac{ln(0.5)}{0.01} \approx 69.31
+		\end{gather}
+		Rundet man das Ergebnis aus (\ref{3b_ergebnis}) ab, so kommt man zu dem Schluss, dass man mindestens eine Gruppe von 70 voneinander unabhängig ausgewählten Personen benötigt, um mit einer Wahrscheinlichkeit von mindestens 50\% davon ausgehen kann, dass mindestens einer aus dieser Gruppe die Blutgruppe AB negativ hat.
+		
+
+
+		\begin{flushright}
+			\text{$\Box$}
+		\end{flushright}
+		
+
+
+\end{document}
+
+
+
+
